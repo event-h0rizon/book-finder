@@ -1,6 +1,5 @@
 // import React from 'react'
 import React, { useState, useReducer, useEffect, useMemo, useRef, useCallback } from "react";
-import InfiniteScroll from "react-infinite-scroll-component";
 import Spinner from "./Spinner";
 
 
