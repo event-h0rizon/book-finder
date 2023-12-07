@@ -3,3 +3,8 @@
     padding: 0px;
     box-sizing: border-box;
 }
+
+.book:hover{
+    background-color:rgba(0, 0, 0, 0.627);
+    color: white;
+}

@@ -8,6 +8,18 @@ import Spinner from "./Spinner";
 
 
 function App() {
+  const bookStyle= {
+    border: "1px solid gray",
+    fontSize: "24px",
+    textAlignment: "center",
+    borderRadius: "4px",
+    paddingTop: "6px",
+    paddingBottom: "6px",
+    paddingRight: "8px",
+    paddingLeft: "8px",
+    marginBottom: "8px",
+  }
+ 
 
   const [query, setQuery] = useState('');
   const [pageNumber, setPageNumber] = useState(1);
@@ -32,6 +44,7 @@ function App() {
 
   const handleChange = (e) => {
     setQuery(e.target.value)
+    setPageNumber(1)
   }
 
   useEffect(() => {
@@ -41,6 +54,8 @@ function App() {
     setBooks([])
     }
   }, [query, pageNumber]);
+
+
 
   useEffect(() => {
     setLoading(true)
@@ -76,11 +91,11 @@ function App() {
       <div className='container my-3'>
         {books.map((book, index) => {
           if (books.length === index + 1) {
-            return <div ref={lastBookElementRef} key={index}>{book}</div>
+            return <div ref={lastBookElementRef} style={bookStyle} className="book" key={index}>{book}</div>
 
           }
           else {
-            return <div key={index}>{book}</div>
+            return <div key={index} style={bookStyle} className="book">{book}</div>
 
           }
 
@@ -88,10 +103,7 @@ function App() {
         <div className="py-4">
         {loading && <Spinner />}
         </div>
-       
-         {/* <div>
-         {loading && 'Loading...'}
-         </div> */}
+    
 
 
 
